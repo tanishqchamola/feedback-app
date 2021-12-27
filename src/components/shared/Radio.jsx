@@ -10,7 +10,7 @@ const Radio = ({ count, selected, handleChange }) => {
 };
 
 Radio.propTypes = {
-	selected: PropTypes.number.isRequired,
+	selected: PropTypes.number,
 };
 
 export default Radio;

@@ -1,6 +1,9 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import FeedbackContext from "../context/FeedbackContext";
 
-function FeedbackStats({ feedback }) {
+function FeedbackStats() {
+	const { feedback } = useContext(FeedbackContext);
+
 	//Average calculation
 	let average =
 		feedback.reduce((accumulator, currentItem) => {
@@ -18,18 +21,5 @@ function FeedbackStats({ feedback }) {
 		</div>
 	);
 }
-
-FeedbackStats.propTypes = {
-	// feedback: PropTypes.array,
-
-	//Defining Structure of the item in the prop array
-	feedback: PropTypes.arrayOf(
-		PropTypes.shape({
-			id: PropTypes.string.isRequired,
-			text: PropTypes.string.isRequired,
-			rating: PropTypes.number.isRequired,
-		})
-	),
-};
 
 export default FeedbackStats;
